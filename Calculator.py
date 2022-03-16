@@ -1,10 +1,3 @@
-# HW3
-#Due Date: 03/13/2021, 11:59PM
-
-"""                                   
-### Collaboration Statement:
-             
-"""
 
 class Node:
     def __init__(self, value):
@@ -60,7 +53,7 @@ class Stack:
 
 
     def isEmpty(self):
-        # YOUR CODE STARTS HERE
+        
         if self.top == None:
             return True
         return False
@@ -68,7 +61,7 @@ class Stack:
 
 
     def __len__(self): 
-        # YOUR CODE STARTS HERE
+        
         c = 0
         current = self.top 
         while current:
@@ -77,7 +70,6 @@ class Stack:
         return c 
 
     def push(self,value):
-        # YOUR CODE STARTS HERE
 
         if self.isEmpty():
             new_node = Node(value)
@@ -92,7 +84,6 @@ class Stack:
 
      
     def pop(self):
-        # YOUR CODE STARTS HERE
         if self.isEmpty():
             return None
         old_top = self.top.value
@@ -101,7 +92,6 @@ class Stack:
   
 
     def peek(self):
-        # YOUR CODE STARTS HERE
         if self.isEmpty():
             return None
         return self.top.value
@@ -136,7 +126,7 @@ class Calculator:
             >>> x._isNumber('2.56p')
             False
         '''
-        # YOUR CODE STARTS HERE
+
         try:
             float(txt)
         except (ValueError):
@@ -191,7 +181,7 @@ class Calculator:
             >>> x._getPostfix('2 * 5% + 3 ^ + -2 + 1 + 4')
         '''
 
-        # YOUR CODE STARTS HERE
+
         postfixStack = Stack()  # method must use postfixStack to compute the postfix expression
         infix = txt.split()
         
@@ -205,7 +195,7 @@ class Calculator:
             return None 
 
         for element in infix:
-            #print(infix.index(element))
+
 
             if self._isNumber(element):
                 element = float(element)
@@ -259,7 +249,7 @@ class Calculator:
                                 postfixlst.append(top)
                     postfixStack.push(element) 
                 else:
-                    #print(element)
+                   
                     return None       
    
         if postfixStack.isEmpty():
@@ -401,9 +391,9 @@ class Calculator:
             print("Argument error in calculate")
             return None
 
-        calcStack = Stack()   # method must use calcStack to compute the  expression
+        calcStack = Stack() 
 
-        # YOUR CODE STARTS HERE
+
         postfix_str = self._getPostfix(self.__expr)
         if postfix_str == None:
             return None
@@ -508,7 +498,7 @@ class AdvancedCalculator:
             >>> C._isVariable('vol%2')
             False
         '''
-        # YOUR CODE STARTS HERE
+
         if word[0].isalpha() == False:
             return False
 
@@ -535,7 +525,7 @@ class AdvancedCalculator:
             >>> C._replaceVariables('x2 - x1')
             '28.0 - 23.0'
         '''
-        # YOUR CODE STARTS HERE
+
         exprLst = expr.split()
         expression = []
         for item in exprLst: 
@@ -556,7 +546,7 @@ class AdvancedCalculator:
     def calculateExpressions(self):
         self.states = {} 
         calcObj = Calculator()     # method must use calcObj to compute each expression
-        # YOUR CODE STARTS HERE
+
         lst = self.expressions.split(';')
 
         
